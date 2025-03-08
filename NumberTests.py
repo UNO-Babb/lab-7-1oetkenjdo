@@ -8,10 +8,23 @@ def isThreeOrFive(n):
   else:
     return False
 
-def isPrime(p):
-  """Returns boolean (True/False) if the value given is prime."""
 
-  return True
+#FINISHED PRIME CODE
+def isPrime(p):
+    """Returns boolean (True/False) if the value given is prime."""
+    if p < 2:
+        return False
+    if p in (2, 3):
+        return True
+    if p % 2 == 0 or p % 3 == 0:
+        return False
+    i = 5
+    while i * i <= p:
+        if p % i == 0 or p % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
 
 def isEven(n):
   """Returns boolean about given value being even."""
@@ -40,6 +53,12 @@ def fibonacciSequence(value):
     n = nums[size - 1] + nums[size - 2]
 
   return nums
+
+#ADDED PALINDROME CODE
+def isPalindrome(num):
+    """Returns boolean determination if number is a palindrome"""
+    return str(num) == str(num)[::-1]
+
 
 #Test your new functions in this main
 def main():
